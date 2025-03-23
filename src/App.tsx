@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
-
+    
 // Dynamically import images using Vite's import.meta.globEager
 const images = Object.values(import.meta.glob('/src/assets/*.jpg', { eager: true })).map((module: any) => module.default)
 
@@ -66,7 +66,7 @@ function App() {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: 'top top',
-                end: 'bottom bottom',
+                end:  `+=${images.length * 10}px`,
                 scrub: 1,
                 pin: true,
                 anticipatePin: 1,
@@ -95,7 +95,6 @@ function App() {
                     <p>{currentText.description}</p>
                 </div>
             </div>
-            <div className='scroll-space'></div>
         </div>
     )
 }
