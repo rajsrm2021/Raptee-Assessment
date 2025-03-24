@@ -3,16 +3,16 @@ import './App.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-// Register the ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger)
     
-// Dynamically import images using Vite's import.meta.globEager
+
 const images = Object.values(import.meta.glob('/src/assets/*.jpg', { eager: true })).map((module: any) => module.default)
 
-// Sort images to ensure correct order
+
 images.sort()
 
-// Text sections with image indices
+
 const textSections = [
     { title: '', description: '', imageIndex: 0 },
     { title: 'BRAKE DISCES', description: 'Breake that stop the bike, but free your mind', imageIndex: 6 },
@@ -34,7 +34,7 @@ function App() {
     useEffect(() => {
         if (!containerRef.current || !imageRef.current) return;
     
-        // Preload images
+       
         images.forEach((src) => {
             const img = new Image();
             img.src = src;
@@ -59,7 +59,7 @@ function App() {
             }
         };
     
-        // Clear previous instances
+       
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     
         const animation = gsap.timeline({
