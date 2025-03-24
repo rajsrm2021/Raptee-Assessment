@@ -105,9 +105,9 @@
   color: #000000;
 }
 
-/* Add this for scrolling space */
+
 .scroll-space {
-  height: 400vh; /* Adjust as needed */
+  height: 400vh; 
 }
 
 @media (max-width: 768px) {
